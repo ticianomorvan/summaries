@@ -272,14 +272,56 @@ Límites de integración finitos ($a,b in RR$) pero funciones que tienen una as�
     ]
   )
 
-- *Teorema* (criterio de comparación para integrales impropias de tipo II): Sean $f$ y $g$ funciones continuas en $[a, b)$ y tal que $|f(x)| <= g(x) space forall x in [a, b)$ y $lim_(x -> b^-) f(x) = plus.minus infinity$. Entonces:
+#list[
+  *Teorema* (criterio de comparación para integrales impropias de tipo II): Sean $f$ y $g$ funciones continuas en $[a, b)$ y tal que $|f(x)| <= g(x) space forall x in [a, b)$ y $lim_(x -> b^-) f(x) = plus.minus infinity$. Entonces:
 
-$ integral_(a)^b g(x) "dx" "converge" arrow.r.double integral_(a)^b f(x) "dx" "converge" $
+  $ integral_(a)^b g(x) "dx" "converge" arrow.r.double integral_(a)^b f(x) "dx" "converge" $
 
-o equivalentemente
+  o equivalentemente
 
-$ integral_(a)^b f(x) "dx" "diverge" arrow.r.double integral_(a)^b g(x) "dx" "diverge" $
+  $ integral_(a)^b f(x) "dx" "diverge" arrow.r.double integral_(a)^b g(x) "dx" "diverge" $
+]
 
 #pagebreak()
 
 = Sucesiones
+
+- *Definición*: una sucesión infinita de números reales es una función cuyo dominio son los naturales $NN$ y cuya imágen está incluída en $RR$. O sea $a: NN -> RR$ tal que $1 arrow.r a(1) = a_1, space 2 arrow.r a(2) = a_2$ y, en general $n arrow.r a(n) =^dot a_n$
+
+- *Notación*: ${ a_1, a_2, a_3, dots}$, ${a_n}_(n = 1)^infinity$, ${a_n}$
+
+#list(
+  [
+    *Definición*: una sucesión ${a_n}$ tiene límite $l in RR$ y se escribe:
+
+    $ lim_(n -> infinity) a_n = l $
+
+    si los términos $a_n$ se acercan a $l$ tanto como queramos al hacer $n$ suficientamente grande. Esto es:
+
+    $ lim_(n -> infinity) = l arrow.l.r.double forall epsilon > 0, space exists space n_o in NN "tq" |a_n - l| < epsilon space.quad forall n >= n_0 $ 
+
+      - Recordemos que $|a_n - l| < epsilon arrow.l.r.double - epsilon < a_n - l < epsilon arrow.l.r.double l - epsilon < a_n < l + epsilon$
+  ],
+  [
+    *Definición*: dada una sucesión ${a_n}$ decimos que $lim_(n -> infinity) a_n = infinity$ si los términos se hacen arbitrariamente grandes al hacer $n$ grande. Esto es:
+
+    $ forall M > 0, space exists space n_o in NN "tal que" a_n > M space.quad forall n >= n_o $
+
+    Vale análogamente para $lim_(n -> infinity) a_n = -infinity$
+  ],
+  [
+    *Definición*: si existe $lim_(n -> infinity) a_n = l$ y $l in RR$ decimos que ${a_n}$ #underline[converge] a $l$. En los demás casos decimos que #underline[diverge].
+  ],
+  [
+    *Teorema*: Sea ${a_n}$ y ${b_n}$ dos sucesiones convergentes y sea $c in RR$. Entonces:
+
+    #enum(
+      [
+        $ lim_(n -> infinity) (a_n plus.minus b_n) = lim_(n -> infinity) a_n plus.minus lim_(n -> infinity) b_n $
+      ],
+      [
+        $ lim_(n -> infinity) (c dot a_n) = c dot lim_(n -> infinity) a_n $
+      ]
+    )
+  ]
+)
